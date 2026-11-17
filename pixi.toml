@@ -1,0 +1,33 @@
+[workspace]
+authors = ["Robin Steuteville <robin.steuteville@nrel.gov>"]
+channels = ["conda-forge"]
+name = "uptime-analysis-with-afdc"
+platforms = ["osx-arm64", "osx-64", "linux-64", "win-64"]
+version = "0.1.0"
+
+[tasks]
+clean-data = { cmd = "python clean_data_for_percent_stations_available_analysis.py", cwd = "data_cleaning" }
+analysis = { cmd = "python percent_stations_available_analysis.py", cwd = "analysis", depends-on = ["clean-data"] }
+plots = { cmd = "Rscript percent_stations_available_plots.R", cwd = "plot_creation", depends-on = ["analysis"] }
+
+# keep R from loading packages from a system R user library, which are ABI-incompatible with conda-forge R
+[target.unix.activation.env]
+R_LIBS_USER = "$CONDA_PREFIX/lib/R/library"
+
+[target.win-64.activation.env]
+R_LIBS_USER = "%CONDA_PREFIX%\\Lib\\R\\library"
+
+[dependencies]
+python = "3.12.*"
+pandas = ">=3.1.1,<4"
+pyarrow = ">=25.0.1,<26"
+r-base = ">=4.5.3,<4.6"
+r-rstudioapi = ">=0.19.0,<0.20"
+r-formatr = ">=1.14,<2"
+r-tidyr = ">=1.3.2,<2"
+r-ggplot2 = ">=4.0.4,<5"
+r-dplyr = ">=1.2.1,<2"
+r-forcats = ">=1.0.1,<2"
+r-viridis = ">=0.6.5,<0.7"
+r-glue = ">=1.8.1,<2"
+r-ggpubr = ">=1.0.0,<2"

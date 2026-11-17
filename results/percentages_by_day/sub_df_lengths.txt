@@ -1,0 +1,87 @@
+group	category	row_count
+EV Network	EV Connect	5688
+EV Network	ChargePoint Network	215050
+EV Network	OpConnect	1311
+EV Network	SHELL_RECHARGE	7743
+EV Network	EVGATEWAY	370
+EV Network	eVgo Network	6528
+EV Network	EVCS	476
+EV Network	EVRANGE	84
+EV Network	Electrify America	5978
+EV Network	CHARGELAB	280
+EV Network	FLO	3445
+EV Network	ZEFNET	56
+EV Network	RIVIAN_WAYPOINTS	1092
+EV Network	RED_E	156
+EV Network	FLASH	147
+EV Network	RIVIAN_ADVENTURE	357
+Top 5 EV Network	EV Connect	5688
+Top 5 EV Network	ChargePoint Network	215050
+Top 5 EV Network	SHELL_RECHARGE	7743
+Top 5 EV Network	eVgo Network	6528
+Top 5 EV Network	Electrify America	5978
+other_age_category	Before 2015	3213
+other_age_category	2019 - 2020	56142
+other_age_category	2015 - 2016	4996
+other_age_category	<NA>	0
+other_age_category	2017 - 2018	12788
+other_age_category	2021 - 2022	171231
+other_age_category	2023 - 2024	370
+single_year_age_category	Before 2015	3213
+single_year_age_category	2019	14749
+single_year_age_category	2015	1904
+single_year_age_category	2020	41393
+single_year_age_category	<NA>	0
+single_year_age_category	2016	3092
+single_year_age_category	2018	8931
+single_year_age_category	2017	3857
+single_year_age_category	2021	108727
+single_year_age_category	2022	62504
+single_year_age_category	2023	370
+single_year_age_category_fewer_years	Before 2020	35746
+single_year_age_category_fewer_years	2020	41393
+single_year_age_category_fewer_years	<NA>	0
+single_year_age_category_fewer_years	2021	108727
+single_year_age_category_fewer_years	2022	62504
+single_year_age_category_fewer_years	2023	370
+DC_and_L2_charger_info	L2	217754
+DC_and_L2_charger_info	DC	27533
+DC_and_L2_charger_info	L2 and DC	3474
+Region	West	117096
+Region	South	52253
+Region	Midwest	33557
+Region	Northeast	45855
+station_size	5 or under	243987
+station_size	11+	685
+station_size	6-10	4089
+total_chargers	4.0	8535
+total_chargers	3.0	1992
+total_chargers	2.0	179588
+total_chargers	1.0	53361
+total_chargers	12.0	176
+total_chargers	8.0	961
+total_chargers	5.0	511
+total_chargers	24.0	14
+total_chargers	6.0	2329
+total_chargers	7.0	141
+total_chargers	10.0	574
+total_chargers	9.0	84
+total_chargers	20.0	34
+total_chargers	14.0	119
+total_chargers	13.0	35
+total_chargers	31.0	7
+total_chargers	16.0	91
+total_chargers	11.0	42
+total_chargers	17.0	6
+total_chargers	25.0	21
+total_chargers	15.0	14
+total_chargers	38.0	14
+total_chargers	27.0	14
+total_chargers	18.0	42
+total_chargers	23.0	7
+total_chargers	22.0	14
+total_chargers	21.0	7
+total_chargers	64.0	7
+total_chargers	29.0	7
+total_chargers	37.0	7
+total_chargers	33.0	7

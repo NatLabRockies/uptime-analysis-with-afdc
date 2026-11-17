@@ -1,0 +1,14 @@
+starting dataframe: 251018
+filter to 50 states + DC: 250892
+filter status to E/T: 250703
+filter access code to public: 248852
+create other_age_category column: 248852
+create single_year_age_category column: 248852
+create single_year_age_category_fewer_years column: 248852
+create Region column: 248852
+create has_L2_chargers column: 248852
+create has_DC_chargers column: 248852
+create total_chargers column: 248852
+create station_size column: 248852
+create DC_and_L2_charger_info column: 248852
+filter out rows with no L2 or DC chargers: 248761
