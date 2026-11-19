@@ -1,4 +1,4 @@
-# Uptime Analysis using ALternative Fuels Data Center (AFDC) data
+# Uptime Analysis using Alternative Fuels Data Center (AFDC) data
 
 This repo includes the analysis code used for the uptime analysis. 
 
