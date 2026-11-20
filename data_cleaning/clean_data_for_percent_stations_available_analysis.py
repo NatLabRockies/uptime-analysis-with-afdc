@@ -1,4 +1,9 @@
-# Cleaning AFDC charging station daily data
+# ruff: noqa: INP001
+###
+# Title: Data cleaning script for the paper titled, "Alternative Fuels Data Center: A New Resource to Measure the Uptime of Public EV Charging Stations"
+# Contact: Robin.Steuteville@nlr.gov
+# Last updated: November 2026
+###
 
 # Import necessary packages
 import pandas as pd

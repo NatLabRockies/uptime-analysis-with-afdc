@@ -1,6 +1,6 @@
 ###
 # Title: GitHub Repo for the paper titled, "Alternative Fuels Data Center:
-  # A New Resource to Measure the Uptime of Public EV Charging Stations"
+# A New Resource to Measure the Uptime of Public EV Charging Stations"
 # Contact: Robin.Steuteville@nlr.gov
 # Creating percent stations operational over time plots
 # Last updated: November 2026
@@ -60,9 +60,6 @@ plot_theme_side_legend <- function(x_axis, legend, legend_individual) {
     )
 }
 
-# Record today's date to include in plot filenames
-DATE <- format(Sys.Date(), "%m_%d_%y") # nolint
-
 # Directory to save the finalized plots into
 outdir <- "../results/plots"
 
@@ -101,9 +98,11 @@ charger_num_df$Date <- as.Date(charger_num_df$Date, format = "%Y-%m-%d")
 plot_x_axis <- scale_x_date(
   name = "Date",
   breaks = seq(min(df$Date), max(df$Date), by = "1 day"),
-  labels = function(x) paste0( # nolint
-    format(x, "%b. "), as.integer(format(x, "%d")), ",\n", format(x, "%Y")
-  ),
+  labels = function(x) {
+    paste0( # nolint
+      format(x, "%b. "), as.integer(format(x, "%d")), ",\n", format(x, "%Y")
+    )
+  },
   limits = range(df$Date),
   expand = c(0, 0)
 )
@@ -121,7 +120,7 @@ plot <- ggplot(df, aes(x = Date, y = percent_available)) +
   scale_y_continuous(labels = function(x) paste0(x, "%")) +
   plot_x_axis
 
-ggsave(plot, filename = paste0("overall_percent_stations_available_", DATE, ".jpeg"), path = outdir, width = 3456, height = 2234, dpi = 254, units = "px", device = "jpeg") # nolint: line_length_linter.
+ggsave(plot, filename = "Figure_1.jpeg", path = outdir, width = 3456, height = 2234, dpi = 254, units = "px", device = "jpeg") # nolint: line_length_linter.
 
 # Station age: percent operational by station open year, in two-year bins
 other_age_df$open_year <- factor(
@@ -138,7 +137,7 @@ plot <- ggplot(other_age_df, aes(x = Date, y = percent_available, group = open_y
 
 ggsave(
   plot,
-  filename = paste0("age_percent_stations_available_", DATE, ".jpeg"),
+  filename = "Figure_3.jpeg",
   path = outdir,
   width = 3456,
   height = 2234,
@@ -146,25 +145,6 @@ ggsave(
   units = "px",
   device = "jpeg"
 )
-
-# Station age: percent operational by single station open year (2015 on)
-yearly_age_df$open_year <- factor(
-  yearly_age_df$open_year,
-  levels = c("2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "Before 2015") # nolint
-)
-
-plot <- ggplot(
-  yearly_age_df,
-  aes(x = Date, y = percent_available, group = open_year, color = open_year)
-) +
-  plot_theme() +
-  geom_line(linewidth = 1) +
-  ylab("Percent of stations operational") +
-  labs(color = "Station Open Year") +
-  scale_y_continuous(labels = function(x) paste0(x, "%")) +
-  plot_x_axis
-
-ggsave(plot, filename = paste0("yearly_percent_stations_available_", DATE, ".jpeg"), path = outdir, width = 3456, height = 2234, dpi = 254, units = "px", device = "jpeg") # nolint
 
 # Station age: percent operational by single station open year (2020 on)
 other_yearly_age_df$open_year <- factor(
@@ -182,7 +162,7 @@ plot <- ggplot(other_yearly_age_df, aes(x = Date, y = percent_available, group =
 
 ggsave(
   plot,
-  filename = paste0("yearly_percent_stations_available_fewer_years_", DATE, ".jpeg"), # nolint
+  filename = "Figure_4.jpeg", # nolint
   path = outdir,
   width = 3456,
   height = 2234,
@@ -217,7 +197,7 @@ plot <- ggplot(network_df_with_avg, aes(x = Date, y = percent_available, group =
   scale_y_continuous(labels = function(x) paste0(x, "%")) +
   plot_x_axis
 
-ggsave(plot, filename = paste0("network_percent_stations_available_", DATE, ".jpeg"), path = outdir, width = 3456, height = 2234, dpi = 254, units = "px", device = "jpeg") # nolint
+ggsave(plot, filename = "Figure_S6.jpeg", path = outdir, width = 3456, height = 2234, dpi = 254, units = "px", device = "jpeg") # nolint
 
 # Top 5 networks: percent operational for the 5 networks with the most station-days, with their average in black # nolint
 plot <- ggplot(top_5_network_df, aes(x = Date, y = percent_available, group = Network, color = Network)) + # nolint
@@ -232,7 +212,7 @@ plot <- ggplot(top_5_network_df, aes(x = Date, y = percent_available, group = Ne
   scale_y_continuous(labels = function(x) paste0(x, "%")) +
   plot_x_axis
 
-ggsave(plot, filename = paste0("top_5_network_percent_stations_available_", DATE, ".jpeg"), path = outdir, width = 3456, height = 2234, dpi = 254, units = "px", device = "jpeg") # nolint
+ggsave(plot, filename = "Figure_S8.jpeg", path = outdir, width = 3456, height = 2234, dpi = 254, units = "px", device = "jpeg") # nolint
 
 
 # Charger type: percent operational for stations with L2 only, DC only, or both # nolint
@@ -244,7 +224,7 @@ plot <- ggplot(charger_df, aes(x = Date, y = percent_available, group = DC_and_L
   scale_y_continuous(labels = function(x) paste0(x, "%")) +
   plot_x_axis
 
-ggsave(plot, filename = paste0("charge_level_percent_stations_available_", DATE, ".jpeg"), path = outdir, width = 3456, height = 2234, dpi = 254, units = "px", device = "jpeg") # nolint
+ggsave(plot, filename = "Figure_5.jpeg", path = outdir, width = 3456, height = 2234, dpi = 254, units = "px", device = "jpeg") # nolint
 
 # Region: percent operational by US Census region
 plot <- ggplot(region_df, aes(x = Date, y = percent_available, group = Region, color = Region)) + # nolint
@@ -255,7 +235,7 @@ plot <- ggplot(region_df, aes(x = Date, y = percent_available, group = Region, c
   scale_y_continuous(labels = function(x) paste0(x, "%")) +
   plot_x_axis
 
-ggsave(plot, filename = paste0("region_percent_stations_available_", DATE, ".jpeg"), path = outdir, width = 3456, height = 2234, dpi = 254, units = "px", device = "jpeg") # nolint
+ggsave(plot, filename = "Figure_S5.jpeg", path = outdir, width = 3456, height = 2234, dpi = 254, units = "px", device = "jpeg") # nolint
 
 # Station size: percent operational by number of ports (5 or under, 6-10, 11+)
 charger_num_df$charger_num <- factor(
@@ -271,4 +251,4 @@ plot <- ggplot(charger_num_df, aes(x = Date, y = percent_available, group = char
   scale_y_continuous(labels = function(x) paste0(x, "%")) +
   plot_x_axis
 
-ggsave(plot, filename = paste0("charger_num_percent_stations_available_", DATE, ".jpeg"), path = outdir, width = 3456, height = 2234, dpi = 254, units = "px", device = "jpeg") # nolint
+ggsave(plot, filename = "Figure_7.jpeg", path = outdir, width = 3456, height = 2234, dpi = 254, units = "px", device = "jpeg") # nolint

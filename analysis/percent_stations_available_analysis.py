@@ -1,6 +1,6 @@
 # ruff: noqa: INP001
 ###
-# Title: GitHub Repo for the paper titled, "Alternative Fuels Data Center: A New Resource to Measure the Uptime of Public EV Charging Stations"
+# Title: Analysis script for the paper titled, "Alternative Fuels Data Center: A New Resource to Measure the Uptime of Public EV Charging Stations"
 # Contact: Robin.Steuteville@nlr.gov
 # Last updated: November 2026
 ###

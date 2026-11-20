@@ -1,5 +1,5 @@
 [workspace]
-authors = ["Robin Steuteville <robin.steuteville@nrel.gov>"]
+authors = ["Robin Steuteville <robin.steuteville@nlr.gov>"]
 channels = ["conda-forge"]
 name = "uptime-analysis-with-afdc"
 platforms = ["osx-arm64", "osx-64", "linux-64", "win-64"]

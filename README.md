@@ -1,6 +1,6 @@
 # Uptime Analysis using Alternative Fuels Data Center (AFDC) data
 
-This repo includes the analysis code used for the uptime analysis. 
+This is the public github repo for the paper titled, "Alternative Fuels Data Center: A New Resource to Measure the Uptime of Public EV Charging Stations". 
 
 The code in this repo is runnable using a small subset of the Alternative Fuels Data Center charging station data provided in the repo (one week of data, for January 1-7, 2023). The full data used in this analysis can be downloaded from the Alternative Fuels Data Center website (https://afdc.energy.gov/data_download).
 
